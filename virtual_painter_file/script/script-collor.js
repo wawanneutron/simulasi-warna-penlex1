@@ -1,3 +1,11 @@
+/* fix warna tidak bisa dirubah saat pertama kali browser dibuka
+maka jalankan reload browser*/
+window.onload = function () {
+	if (!window.location.hash) {
+		window.location = window.location + '#penta-virtual-paint';
+		window.location.reload();
+	}
+}
 /* Fungsi untuk mengganti Warna pada preview 
 function changeColor(color, title_color) {
 document.getElementById('preview').style.backgroundColor = color;
