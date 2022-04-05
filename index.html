@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="/virtual_painter_file/icon.png">
+	<title>Penta Prima | Virtual Painter</title>
+	<link rel="stylesheet" href="virtual_painter_file/style/style.css" type="text/css">
+	<link rel="stylesheet" href="virtual_painter_file/style/style-color.css" type="text/css">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-light bg-light fixed-top mb-5">
+		<div class="container">
+			<a href="#" target="__blank" class="btn btn-primary" title="kembali">
+				<i class="fa-solid fa-arrow-left-long"></i>
+				Back
+			</a>
+		</div>
+	</nav>
+	<section class="section-virtual-paint container" style="margin-top: 60px;">
+		<h2>Simulasi Pengecatan Kamar Tidur</h2>
+		<div class="row">
+			<div class="col-md-7">
+				<div class="object_virtual">
+					<div class="painted_object_room">
+						<img id="pic_room" class="img-fluid" src="virtual_painter_file/room.png">
+					</div>
+					<div class="painted_object_virtual">
+						<img id="pic_kanan" class="img-fluid" src="virtual_painter_file/dinding_kanan.png"
+							onload="getPixelsKanan(this)">
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<!-- ######### Pilih Warna Kanan ########3 -->
+				<div class="card card-color-palet">
+					<div class="card-header">
+						<div id="focus_color_kanan" class="preview_color"></div>
+						<div id="nama_color_kanan" class="font16"></div>
+						<div id="kode_color_kanan">
+						</div>
+					</div>
+					<div class=" overflow-auto">
+						<div class="card-body">
+							<div class="nomor_obyek style1 style2 style4">PILIHAN WARNA</div>
+						</div>
+						<div class="card-body">
+							<div>
+								<div id="result_kanan">
+									<!-- color palet -->
+									<!-- class="color_container" -->
+									<div class="color-palet">
+										<div class="color_select" style="background-color:#faf7f2;"
+											onclick="changeColor('#faf7f2'); previewColorKanan('#faf7f2', 'Clasic white', 'P 309');"
+											title="Clasic white"></div>
+										<div class="color_select" style="background-color:#fffedf;"
+											onclick="changeColor('#fffedf'); previewColorKanan('#fffedf', 'Lily white', 'P 306');"
+											title="Lily white"></div>
+										<div class="color_select" style="background-color:#fff6d9;"
+											onclick="changeColor('#fff6d9'); previewColorKanan('#fff6d9', 'Barley white', 'P 305');"
+											title="Barley white"></div>
+										<div class="color_select" style="background-color:#fae8d0;"
+											onclick="changeColor('#fae8d0'); previewColorKanan('#fae8d0', 'Rose white', 'P 304');"
+											title="Rose white"></div>
+										<div class="color_select" style="background-color:#e9d8a4;"
+											onclick="changeColor('#e9d8a4'); previewColorKanan('#e9d8a4', 'Lemon Drop', 'P 350');"
+											title="Lemon Drop"></div>
+										<div class="color_select" style="background-color:#c6c9f2;"
+											onclick="changeColor('#c6c9f2'); previewColorKanan('#c6c9f2', 'Igloo', '50016');"
+											title="Igloo"></div>
+										<div class="color_select" style="background-color:#cdd1dd;"
+											onclick="changeColor('#cdd1dd'); previewColorKanan('#cdd1dd', 'Light Grey', 'P 369');"
+											title="Light Grey"></div>
+										<div class="color_select" style="background-color:#b7ab9b;"
+											onclick="changeColor('#b7ab9b'); previewColorKanan('#b7ab9b', 'Magnolia', 'P 312');"
+											title="Magnolia"></div>
+										<div class="color_select" style="background-color:#838383;"
+											onclick="changeColor('#838383'); previewColorKanan('#838383', 'Mist Grey', 'P 321');"
+											title="Mist Grey"></div>
+										<div class="color_select" style="background-color:#4b3a44;"
+											onclick="changeColor('#4b3a44'); previewColorKanan('#4b3a44', 'Chestnut Brown', 'P 348');"
+											title="Chestnut Brown"></div>
+										<div class="color_select" style="background-color:#f4f9fd;"
+											onclick="changeColor('#f4f9fd'); previewColorKanan('#f4f9fd', 'Metro White', 'P 300');"
+											title="Metro White"></div>
+										<div class="color_select" style="background-color:#a4b5af;"
+											onclick="changeColor('#a4b5af'); previewColorKanan('#a4b5af', 'Crystal Blue', 'P 352');"
+											title="Crystal Blue"></div>
+										<div class="color_select" style="background-color:#e8d7c7;"
+											onclick="changeColor('#e8d7c7'); previewColorKanan('#e8d7c7', 'Orchid white', 'P 303');"
+											title="Orchid white"></div>
+										<div class="color_select" style="background-color:#e7e6d1;"
+											onclick="changeColor('#e7e6d1'); previewColorKanan('#e7e6d1', 'Bluebell White', 'P 301');"
+											title="Bluebell White"></div>
+										<div class="color_select" style="background-color:#354581;"
+											onclick="changeColor('#354581'); previewColorKanan('#354581', 'Benton Harbor', '54004');"
+											title="Benton Harbor"></div>
+										<div class="color_select" style="background-color:#ffdbb9;"
+											onclick="changeColor('#ffdbb9'); previewColorKanan('#ffdbb9', 'Peach', '31000');"
+											title="Peach"></div>
+										<div class="color_select" style="background-color:#c6a18e;"
+											onclick="changeColor('#c6a18e'); previewColorKanan('#c6a18e', 'Peach Pink', 'P 324');"
+											title="Peach Pink"></div>
+										<div class="color_select" style="background-color:#c96357;"
+											onclick="changeColor('#c96357'); previewColorKanan('#c96357', 'Coral Pink', 'P 310');"
+											title="Coral Pink"></div>
+										<div class="color_select" style="background-color:#a33929;"
+											onclick="changeColor('#a33929'); previewColorKanan('#a33929', 'Poppy', 'P 322');"
+											title="Poppy"></div>
+										<div class="color_select" style="background-color:#792622;"
+											onclick="changeColor('#792622'); previewColorKanan('#792622', 'Coral Red', 'P 313');"
+											title="Coral Red"></div>
+										<div class="color_select" style="background-color:#fde9ac;"
+											onclick="changeColor('#fde9ac'); previewColorKanan('#fde9ac', 'Light House Point', '20001');"
+											title="Light House Point"></div>
+										<div class="color_select" style="background-color:#f9dfa4;"
+											onclick="changeColor('#f9dfa4'); previewColorKanan('#f9dfa4', 'Golden Apricot', '11007');"
+											title="Golden Apricot"></div>
+										<div class="color_select" style="background-color:#e88c63;"
+											onclick="changeColor('#e88c63'); previewColorKanan('#e88c63', 'Istambul', '33004');"
+											title="Istambul"></div>
+										<div class="color_select" style="background-color:#d35f2c;"
+											onclick="changeColor('#d35f2c'); previewColorKanan('#d35f2c', 'Orange Yellow', '34002');"
+											title="Orange Yellow"></div>
+										<div class="color_select" style="background-color:#f3dd49;"
+											onclick="changeColor('#f3dd49'); previewColorKanan('#f3dd49', 'Canary Yellow', '25002');"
+											title="Canary Yellow"></div>
+										<div class="color_select" style="background-color:#85bc95;"
+											onclick="changeColor('#85bc95'); previewColorKanan('#85bc95', 'Fresh Green', 'P 320');"
+											title="Fresh Green"></div>
+										<div class="color_select" style="background-color:#66ad9b;"
+											onclick="changeColor('#66ad9b'); previewColorKanan('#66ad9b', 'Turquoise', 'P 377');"
+											title="Turquoise"></div>
+										<div class="color_select" style="background-color:#2c8394;"
+											onclick="changeColor('#2c8394'); previewColorKanan('#2c8394', 'Aqua Blue', '64001');"
+											title="Aqua Blue"></div>
+										<div class="color_select" style="background-color:#195182;"
+											onclick="changeColor('#195182'); previewColorKanan('#195182', 'Romantic Blue', '54003');"
+											title="Romantic Blue"></div>
+										<div class="color_select" style="background-color:#17231f;"
+											onclick="changeColor('#17231f'); previewColorKanan('#17231f', 'Forest Green', '68000');"
+											title="Forest Green"></div>
+										<div class="color_select" style="background-color:#a1babf;"
+											onclick="changeColor('#a1babf'); previewColorKanan('#a1babf', 'Sky Blue', 'P 327');"
+											title="Sky Blue"></div>
+										<div class="color_select" style="background-color:#9bc3cb;"
+											onclick="changeColor('#9bc3cb'); previewColorKanan('#9bc3cb', 'Ice Blue', 'P 370');"
+											title="Ice Blue"></div>
+										<div class="color_select" style="background-color:#6c7b80;"
+											onclick="changeColor('#6c7b80'); previewColorKanan('#6c7b80', 'Lido', 'P 374');"
+											title="Lido"></div>
+										<div class="color_select" style="background-color:#6c3d5d;"
+											onclick="changeColor('#6c3d5d'); previewColorKanan('#6c3d5d', 'Antique', '47001');"
+											title="Antique"></div>
+										<div class="color_select" style="background-color:#fcf9e6;"
+											onclick="changeColor('#fcf9e6'); previewColorKanan('#fcf9e6', 'Brilliant White', 'P 329');"
+											title="Brilliant White"></div>
+										<div class="color_select" style="background-color:#e8d0e6;"
+											onclick="changeColor('#e8d0e6'); previewColorKanan('#e8d0e6', 'Rose Garden', '40011');"
+											title="Rose Garden"></div>
+										<div class="color_select" style="background-color:#f9cebe;"
+											onclick="changeColor('#f9cebe'); previewColorKanan('#f9cebe', 'Peach Dust', 'P 353');"
+											title="Peach Dust"></div>
+										<div class="color_select" style="background-color:#e48768;"
+											onclick="changeColor('#e48768'); previewColorKanan('#e48768', 'Wild Rose', '42001');"
+											title="Wild Rose"></div>
+										<div class="color_select" style="background-color:#e06440;"
+											onclick="changeColor('#e06440'); previewColorKanan('#e06440', 'Cinnamon Spice', '44004');"
+											title="Cinnamon Spice"></div>
+										<div class="color_select" style="background-color:#c6240d;"
+											onclick="changeColor('#c6240d'); previewColorKanan('#c6240d', 'Sunrise', '46005');"
+											title="Sunrise"></div>
+										<div class="color_select" style="background-color:#fff3d9;"
+											onclick="changeColor('#fff3d9'); previewColorKanan('#fff3d9', 'Candy Yellow', '30001');"
+											title="Candy Yellow"></div>
+										<div class="color_select" style="background-color:#fff2cd;"
+											onclick="changeColor('#fff2cd'); previewColorKanan('#fff2cd', 'Currier Cream', '10012');"
+											title="Currier Cream"></div>
+										<div class="color_select" style="background-color:#f4e8b4;"
+											onclick="changeColor('#f4e8b4'); previewColorKanan('#f4e8b4', 'Apple White', 'P 302');"
+											title="Apple White"></div>
+										<div class="color_select" style="background-color:#e3d284;"
+											onclick="changeColor('#e3d284'); previewColorKanan('#e3d284', 'Antique White', 'P 332');"
+											title="Antique White"></div>
+										<div class="color_select" style="background-color:#c2a557;"
+											onclick="changeColor('#c2a557'); previewColorKanan('#c2a557', 'Cream', 'P 382');"
+											title="Cream"></div>
+										<div class="color_select" style="background-color:#f5e3c3;"
+											onclick="changeColor('#f5e3c3'); previewColorKanan('#f5e3c3', 'Golden Wheat', '2044P');"
+											title="Golden Wheat"></div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-7 col-description-second">
+				<div class="card border-0">
+					<div class=" card-body">
+						<div class="d-none d-lg-block">
+							<img src="virtual_painter_file/Pentalex.png" class="w-25 float-lg-start me-3" />
+						</div>
+						<div class="d-lg-none">
+							<img src="virtual_painter_file/Pentalex.png" class="img-fluid w-75 float-lg-start me-3" />
+						</div>
+						<div>
+							<strong>PENTALEX (7700 - SERI)</strong><br />
+							<em style="font-size: 14px;">Acrylic Emulsion Paint for Interior &amp; Exterior</em><br />
+							<p>
+								Cat tembok yang terbuat dari bahan dasar resin acrylic dasar air, pigment, dan
+								additive-additive
+								pilihan, tidak berbau, mudah diaplikasi, dan cepat kering. Lapisan keringnya tidak mudah
+								retak,
+								daya
+								lekatnya sangat baik dan tidak mudah luntur bila terkena air, menjadikan cat ini bisa
+								digunakan
+								untuk pelindung permukaan dinding bagian dalam maupun luar ruangan.
+								<br>
+								* Warna-warna mendekati warna aslinya, cahaya dan bentuk permukaan mempengaruhi hasil
+								akhir.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<script src="/virtual_painter_file/script/script-collor.js"></script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="virtual_painter_file/script/script.js"></script>
+	<script type="text/javascript" src="virtual_painter_file/script/fading_script.js"></script>
+</body>
+
+</html>

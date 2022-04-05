@@ -1,0 +1,78 @@
+div.preview_color {
+	width: 30%; 
+	height:50px; 
+	float:left;
+	border-radius: 5px;
+	border:1px solid #eee;
+	margin-right: 20px;
+}
+
+div.color_select:active{
+	border: 2px solid salmon;
+}
+
+.object_virtual{
+	position: relative;
+	/* margin-bottom: 30vh; */
+}
+
+.painted_object_room {
+	position: absolute;
+	/* top: 0; */
+}
+.object_virtual img{
+	border-radius: 12px;
+	margin-bottom: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+	div.col-description{
+		margin-top: -200px;
+	}
+}
+@media only screen and (max-width: 407px) {
+	div.col-description{
+		margin-top: -320px;
+	}
+	div.col-description-second{
+		margin-top: 40px;
+	}
+	.card-color-palet{
+		height: 300px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	div.col-description{
+		margin-top: -800px;
+	}
+	/* div.col-description-second{
+		margin-top: -630px;
+	} */
+	.card-color-palet{
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	div.col-description{
+		margin-top: -300px;
+	}
+	div.col-description-second{
+		margin-top: -15px;
+	}
+	.card-color-palet{
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	div.col-description{
+		margin-top: -90px;
+	}
+	div.col-description-second{
+		margin-top: 10px;
+	}
+	.card-color-palet{
+		height: 400px;
+	}
+}

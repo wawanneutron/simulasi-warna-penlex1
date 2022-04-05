@@ -1,0 +1,62 @@
+.color_select {
+    border: 1px #f2f2f2 solid;
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+
+div.color_selector {
+    /*bakcground-color:#bde3a6;*/
+    background-color: #faf7f2;
+    padding: 10px 10px 10px 10px;
+    width: 443px;
+    margin-bottom: 15px;
+    height: 230px;
+    border: 2px #e2e2e2 solid;
+}
+
+div.nomor_obyek {
+    float: left;
+    margin-right: 10px;
+    height: auto;
+}
+
+.style1 {
+    font-size: 36px;
+    color: #0000FF;
+    font-weight: bold;
+}
+
+.style2 {
+    font-size: 18px
+}
+
+.style4 {
+    color: #FF6666
+}
+
+body {
+    background-color: #FFFFCC;
+}
+
+.style5 {
+    font-size: 18px;
+    color: #666666;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.style6 {
+    color: #666666
+}
+
+.style8 {
+    color: #666666;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.style9 {
+    color: #FF3333;
+    font-weight: bold;
+    font-size: 14px;
+}
